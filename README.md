@@ -12,5 +12,5 @@ Vous pouvez consulter nos documents en direct via les liens ci-dessous.
 
 | Document | Lien d'Accès Direct (URL) |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| **Politique de Confidentialité** | [Consulter en ligne](https://nagithan.github.io/Le-Monde-des-Enigmes/privacy.html) |
-| **Conditions Générales de Vente** | [Consulter en ligne](https://nagithan.github.io/Le-Monde-des-Enigmes/conditions-generales.html) |
+| **Politique de Confidentialité** | [Consulter en ligne](https://nagithan.github.io/MondeDesEnigmes/privacy.html) |
+| **Conditions Générales de Vente** | [Consulter en ligne](https://nagithan.github.io/MondeDesEnigmes/conditions-generales.html) |
