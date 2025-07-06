@@ -5,73 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - Le Monde des Énigmes</title>
     <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #f4f6f9;
+            --card-background: #ffffff;
+            --text-color: #333;
+            --text-secondary: #555;
+            --border-color: #e1e4e8;
+            --shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
+            line-height: 1.7;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            line-height: 1.6;
         }
-        .container {
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
         }
-        h1 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-size: 20px;
-            color: #606770;
-            font-weight: normal;
-            margin-bottom: 30px;
-        }
-        p {
-            font-size: 17px;
-            color: #333;
-        }
-        a {
-            color: #007aff;
-            text-decoration: none;
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
             font-weight: 600;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #8a8d91;
+
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+        
+        .card h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-color);
+        }
+        
+        .card h2 svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+        }
+
+        .faq-section details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        
+        .faq-section details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-section summary {
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; /* Hide default marker */
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .faq-section summary::-webkit-details-marker {
+            display: none; /* Hide default marker for Safari */
+        }
+        
+        .faq-section summary::after {
+            content: '+';
+            font-size: 1.5em;
+            color: var(--primary-color);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.2s;
+        }
+
+        .faq-section details[open] summary::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-section .answer {
+            padding-top: 15px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .contact-card .cta-button {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-bottom: 25px;
+        }
+
+        .contact-card .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        
+        .info-list li {
+            list-style: none;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-list li svg {
+            width: 20px;
+            height: 20px;
+            fill: #777;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Le Monde des Énigmes</h1>
-        <h2>Page de Support Officielle</h2>
-        
-        <p>Pour toute question, suggestion ou pour nous signaler un problème technique, n'hésitez pas à nous contacter.</p>
-        
-        <p>Veuillez nous envoyer un e-mail à l'adresse suivante :</p>
-        
-        <p><a href="mailto:mondeenigmes@gmail.com">mondeenigmes@gmail.com</a></p>
-        
-        <p>Nous nous efforçons de vous répondre dans les plus brefs délais.</p>
-        
-        <div class="footer">
-            &copy; 2025 Le Monde des Énigmes
-        </div>
+
+    <header class="header">
+        <h1>Centre d'Assistance</h1>
+        <p>Aide et support pour l'application "Le Monde des Énigmes"</p>
+    </header>
+
+    <div class="main-container">
+        <section class="card faq-section">
+            <h2>
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                Questions Fréquentes (FAQ)
+            </h2>
+            
+            <details>
+                <summary>Comment restaurer mes achats ?</summary>
+                <div class="answer">
+                    Si vous avez changé d'appareil ou réinstallé l'application, vous pouvez restaurer vos achats précédents sans frais. Cherchez le bouton "Restaurer les achats" (souvent situé dans les paramètres ou sur la page de la boutique de l'app) et appuyez dessus. Assurez-vous d'être connecté avec le même identifiant Apple que celui utilisé pour l'achat initial.
+                </div>
+            </details>
+            
+            <details>
+                <summary>J'ai fait un achat mais il n'apparaît pas.</summary>
+                <div class="answer">
+                    Parfois, il peut y avoir un léger délai. Essayez d'abord de redémarrer l'application complètement. Si cela ne fonctionne pas, utilisez la fonction "Restaurer les achats" mentionnée ci-dessus. Si le problème persiste, veuillez nous contacter en nous fournissant le reçu de l'App Store.
+                </div>
+            </details>
+
+            <details>
+                <summary>Vais-je perdre ma progression si je change de téléphone ?</summary>
+                <div class="answer">
+                    Votre progression est sauvegardée localement sur votre appareil. Pour la transférer, la meilleure méthode est d'utiliser la fonction de sauvegarde et de restauration complète de l'iPhone via iCloud ou iTunes/Finder. Nous travaillons à l'intégration d'une synchronisation iCloud pour simplifier ce processus dans une future mise à jour.
+                </div>
+            </details>
+        </section>
+
+        <aside class="card contact-card">
+            <h2>
+                <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                Contacter le Support
+            </h2>
+            <p>Si vous n'avez pas trouvé de réponse dans la FAQ, notre équipe est là pour vous aider.</p>
+            
+            <a href="mailto:mondeenigmes@gmail.com?subject=Support%20-%20Le%20Monde%20des%20Énigmes" class="cta-button">Envoyer un e-mail</a>
+            
+            <p><strong>Pour une aide plus rapide, merci d'inclure :</strong></p>
+            <ul class="info-list">
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                    Le modèle de votre appareil
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    La version d'iOS
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M19.95 11.2c.2-1.28-.5-2.52-1.76-2.93l-1.39-.45c-.53-.17-1.09-.03-1.53.37l-1.23 1.23c-1.25-1.03-2.57-1.8-3.59-2.21l.8-2.39c.31-.94-.06-1.99-.94-2.4l-1.3-.61C7.14 1.29 6 1.76 5.5 2.86l-1.39 3.03C4.06 6 4 6.16 4 6.32V12c0 .88.39 1.67 1 2.22v5.28c0 .83.67 1.5 1.5 1.5h1c.41 0 .75-.34.75-.75V19h4.5v1.25c0 .41.34.75.75.75h1c.83 0 1.5-.67 1.5-1.5V14.2c.61-.55 1-1.34 1-2.22v-.32c0-.12-.02-.24-.05-.36l1.09-2.45c.48-1.09.2-2.35-.6-3.17z"/></svg>
+                    Une description du problème
+                </li>
+            </ul>
+        </aside>
     </div>
+
+    <footer>
+        &copy; 2025 Le Monde des Énigmes - Tous droits réservés.
+    </footer>
+    
 </body>
 </html>
